@@ -7,7 +7,7 @@ export default class AddComments extends Component {
         return (
             <div className="comment-list">
                 <img className="comment-list__thumbnail" src={mohan} alt="grey-thumbnail"/>
-                 
+                <div className="comment-list__post">
                 <div className="comment-list__commentbox">
                     <p className="comment-list__name">{this.props.name}</p>
                     <p className="comment-list__date">{Date(this.props.timestamp)}</p> 
@@ -15,6 +15,8 @@ export default class AddComments extends Component {
                 </div>
 
                 <p className="comment-list__comment">{this.props.comment}</p>
+                </div> 
+                
             </div>
         );
     }

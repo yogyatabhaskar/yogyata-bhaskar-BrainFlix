@@ -1,0 +1,13 @@
+
+
+.video-recommendation {
+    display: flex;
+
+    &__thumbnail{
+        width: 1.875rem;
+        height: 4rem;
+        // margin-right: 16px;
+        border-radius: 4px;
+        // object-fit: cover;
+    }
+}

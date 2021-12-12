@@ -3,10 +3,21 @@
 .comment-list{
     display: flex;
     
+    
 
     &__thumbnail{
         width: 2.25rem;
         height: 2.25rem;
         border-radius: 50%;
+    }
+
+    &__post {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__commentbox {
+        display: flex;
+       
     }
 }
