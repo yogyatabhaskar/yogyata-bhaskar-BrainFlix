@@ -1,0 +1,81 @@
+@use '../../styles/partials/_mixins.scss'as *;
+@use '../../styles/partials/_variables.scss' as *;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    @include tablet {
+        flex-direction: row;
+    }
+    
+    &__logoimg {
+        display: flex;
+        justify-content: center;
+    }
+    
+    &__logo{
+        width: 7.5rem;
+        height: 1.5625rem;
+        
+        padding-bottom: 1rem;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+    }
+
+    &__search{
+        display: flex;
+        width: 100%;
+        padding-bottom: 1rem;
+        
+    }
+
+    &__searchbar{
+        background-image: url(../../assets/Icons/search.svg);
+        background-repeat: no-repeat;
+        background-position: left 0.5rem bottom 50%;
+        flex-grow: 2;
+        border: .0625rem solid $color-quinary;
+        border-radius: .25rem;
+        height: 2rem;
+        margin-right: 1rem;
+
+        @include tablet {
+            flex-grow: 0;
+            width: 9.375rem;
+        }
+    }
+    &__avatar{
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+    }
+
+    &__button {
+        background-color: $color-primary;
+        background-image: url(../../assets/Icons/upload.svg);
+        background-repeat: no-repeat;
+        background-position: left 0.5rem bottom 50%;
+        border: 0;
+        border-radius: .25rem;
+        color: $color-secondary;
+        height: 2.5rem;
+        @include tablet {
+            width: 9.375rem;
+        }
+    }
+}
+
+input::placeholder {
+    padding-left: 2rem;
+    color: $color-quaternary;
+}
