@@ -1,0 +1,16 @@
+@use '../../../styles/partials/_variables.scss' as *;
+
+.hero {
+    background-color: $color-sept;
+   width: 100%;
+   position: relative;
+   padding-top: 56.25%;
+  
+    &__video {
+        height: 100%; // or width.. to manage the 
+        position: absolute;
+        top: 1rem;
+        
+        
+    }
+}

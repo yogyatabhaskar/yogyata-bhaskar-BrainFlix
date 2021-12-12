@@ -1,11 +1,14 @@
 import mohan from '../../../assets/Images/Mohan-muruge.jpg';
 import viewicon from "../../../assets/Icons/views.svg";
 import likeicon from "../../../assets/Icons/likes.svg";
+// import AddComments from './AddComments/AddComments';
 import "./MainBody.scss";
 
 function VideoInfo({ selectedVideo }) {
   return (
     <main className="videoinfo">
+        <div className="container">
+
       <h1>{selectedVideo.title}</h1>
       <div className="videoinfo__detail">
         <p className="videoinfo__channel">{selectedVideo.channel}</p>
@@ -48,8 +51,9 @@ function VideoInfo({ selectedVideo }) {
                 <button className="review__button">COMMENT</button>
             </div>
         </div>
+      </div>
 
-        
+      <div
       </div>
     </main>
   );

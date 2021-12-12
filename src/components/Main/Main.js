@@ -1,5 +1,5 @@
 // import "./Main.scss";
-// import Hero from './Hero/Hero';
+import Hero from './Hero/Hero';
 import MainBody from './MainBody/MainBody';
 import videoDetailsData from '../../data/video-details.json';
 // import AddComment from './'
@@ -29,7 +29,7 @@ class Body extends Component {
   
       return(
         <div className="home-page">
-            {/* <Hero selectedVideo={this.state.selectedVideo}/> */}
+            <Hero selectedVideo={this.state.selectedVideo}/>
             <MainBody selectedVideo={this.state.selectedVideo} /> 
             {/* <AddComments />     */}
         </div>
