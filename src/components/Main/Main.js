@@ -2,7 +2,7 @@
 import Hero from './Hero/Hero';
 import MainBody from './MainBody/MainBody';
 import videoDetailsData from '../../data/video-details.json';
-// import AddComment from './'
+import AddComments from './MainBody/AddComments/AddComments'
 // import videosData from '././data/videos.json../../data/videos.json';
 import { Component } from 'react';
 
@@ -31,10 +31,17 @@ class Body extends Component {
         <div className="home-page">
             <Hero selectedVideo={this.state.selectedVideo}/>
             <MainBody selectedVideo={this.state.selectedVideo} /> 
-            {/* <AddComments />     */}
+            {this.state.selectedVideo.comments.map((article) => {
+              return <AddComments key={article.id} name={article.name} date={article.timestamp} comment={article.comment}  />;
+            })}
         </div>
-      )
+      );
     }
   }
 
 export default Body;
+
+
+// {this.state.articles.map((article) => {
+//   return <Article key={article.id} title={article.title} />;
+// })}
