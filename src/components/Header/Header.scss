@@ -13,30 +13,33 @@
     &__logoimg {
         display: flex;
         justify-content: center;
+        padding-bottom: 1rem;
     }
     
     &__logo{
         width: 7.5rem;
         height: 1.5625rem;
-        
-        padding-bottom: 1rem;
     }
 
     &__info{
         display: flex;
-        flex-direction: column;
+        flex-flow: column wrap;
         width: 100%;
-        @include tablet {
-            flex-direction: row;
-            justify-content: flex-end;
-        }
+        // flex-direction: column;
+        // width: 100%;
+        // @include tablet {
+        //     flex-direction: row;
+        //     justify-content: flex-end;
+        // }
     }
 
     &__search{
         display: flex;
         width: 100%;
         padding-bottom: 1rem;
-        
+        @include tablet {
+            justify-content: flex-end;
+        }
     }
 
     &__searchbar{
@@ -52,6 +55,11 @@
         @include tablet {
             flex-grow: 0;
             width: 9.375rem;
+        }
+
+        &::placeholder {
+            padding-left: 5rem;
+            color: $color-quaternary;
         }
     }
     &__avatar{

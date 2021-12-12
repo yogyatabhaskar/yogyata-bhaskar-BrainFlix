@@ -12,14 +12,18 @@ function Header() {
       </div>
     <div className="header__info">
         <div className="header__search">
-          <input className="header__searchbar" type="text" placeholder="Search"></input>
-          <img
-            className="header__avatar"
-            src={avatar}
-            alt="person-pic"
-          />
+          <input className="header__searchbar" type="text" placeholder="  Search"></input>  
         </div>
+        <div>
         <button className="header__button">UPLOAD</button>
+          <img
+              className="header__avatar"
+              src={avatar}
+              alt="person-pic"
+            />
+          
+        </div>  
+        
     </div>
     </header>
   );

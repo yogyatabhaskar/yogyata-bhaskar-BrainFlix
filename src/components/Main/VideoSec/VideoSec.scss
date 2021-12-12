@@ -2,12 +2,70 @@
 
 .video-recommendation {
     display: flex;
+    box-sizing: border-box;
+    margin: 1.5rem 0;
+    
+    // max-width: 100%;
+    // height: auto;
+    // max-width: 20vw;
+    
+    // &__thumbnail{
+    //     max-width: 100%;
+    //     height: auto;
+    // }
+    
+    &__pic{
+        // width: 120px;
+        // height: 70px;
+        // // margin-right: 16px;
+        // border-radius: 4px;
+        // // object-fit: cover;
 
-    &__thumbnail{
-        width: 1.875rem;
-        height: 4rem;
-        // margin-right: 16px;
-        border-radius: 4px;
-        // object-fit: cover;
+        // max-width: 100%;
+        // height: auto;
+
+        border-radius: 0.25rem;
+        width: 7.5rem;
+        height: 4.374rem;
+        object-fit: cover;
     }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 70px;
+        padding-left: 1rem;
+    }
+
+    &__title {
+        font-size: 0.8rem;
+        height: 2rem;
+        width: 9.25rem;
+        margin: 0;
+        font-family: 'Avenir-Bold';
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+    // @include tablet {
+    //   font-size: 0.95rem;
+    //   width: 11rem;
+    //   height: 2.75rem;
+    //   line-height: 1.25rem;
+    // }
+
+    &__channel {
+        margin: 0;
+        font-size: 0.875rem;
+
+        // @include tablet {
+        //   font-size: 0.9rem;
+        // }
+    }
+
+
+}
 }
