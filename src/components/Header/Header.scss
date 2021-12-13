@@ -1,0 +1,139 @@
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+  @include tablet {
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1rem 1.5rem;
+  }
+  @include desktop {
+    padding: 1rem 9rem;
+  }
+
+  &__logoimg {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    @include tablet {
+      margin-right: auto;
+    }
+  }
+
+  &__logo {
+      height: 1.7rem;
+    display: flex;
+    justify-content: center;
+    @include tablet {
+      width: 7.5rem;
+    }
+  }
+
+
+  &__search {
+    display: flex;
+    width: 100%;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__searchbar {
+
+    height: 3rem;
+    width: 85vw;
+    border: 0.063rem solid $color-quinary;
+    border-radius: 0.25rem;
+    background-color: #fafafa;
+    padding-left: 0.75rem;
+    color: $color-quaternary;
+    margin-right: 1rem;
+    &:focus {
+      border: 0.125rem solid $color-primary;
+      box-sizing: border-box;
+      padding-left: 0.687rem;
+    }
+    &::placeholder {
+      background-image: url("../../assets/Icons/search.svg");
+      background-repeat: no-repeat;
+      color: #323232;
+      font-size: 1rem;
+    }
+    @include tablet {
+      width: 15.5rem;
+    }
+    @include desktop {
+      width: 13.75rem;
+    }
+  }
+
+  &__avatar1 {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    display: flex;
+    object-fit: cover;
+    object-position: left;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__account {
+    display: flex;
+    flex-direction: row;
+  }
+
+  
+  &__avatar2 {
+    display: none;
+    @include tablet {
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+      display: flex;
+      object-fit: cover;
+      object-position: left;
+
+      margin: auto 0;
+    }
+  }
+
+  &__button {
+    background-color: $color-primary;
+    background-image: url(../../assets/Icons/upload.svg);
+    background-repeat: no-repeat;
+    background-position: left 0.5rem bottom 50%;
+    width: 93vw;
+    height: 3rem;
+    margin: 1rem;
+    color: $color-secondary;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      width: 10rem;
+      margin: auto 1.5rem;
+    }
+    @include desktop {
+      &:hover {
+        background-color: $color-tertiary;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+input::placeholder {
+  padding-left: 2rem;
+  color: $color-quaternary;
+}

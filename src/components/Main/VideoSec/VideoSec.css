@@ -1,0 +1,45 @@
+.video-recommendation {
+  padding: 0 1rem;
+  display: flex;
+  box-sizing: border-box;
+  margin: 1.5rem 0;
+}
+.video-recommendation__pic {
+  border-radius: 0.25rem;
+  width: 7.5rem;
+  height: 4.374rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.video-recommendation__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 70px;
+  padding-left: 1rem;
+  margin: 0;
+}
+.video-recommendation__title {
+  font-size: 0.8rem;
+  height: 2rem;
+  width: 9.25rem;
+  margin: 0;
+  font-family: "Avenir-Bold";
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #000000;
+  font-weight: bold;
+}
+@media (min-width: 48rem) {
+  .video-recommendation__title {
+    margin: 0;
+  }
+}
+.video-recommendation__channel {
+  margin: 0;
+}
+@media (min-width: 48rem) {
+  .video-recommendation__channel {
+    margin: 0;
+  }
+}/*# sourceMappingURL=VideoSec.css.map */

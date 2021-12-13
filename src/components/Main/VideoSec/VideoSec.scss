@@ -1,0 +1,52 @@
+@use '../../../styles/partials/_mixins.scss' as *;
+@use '../../../styles/partials/_variables.scss' as *;
+
+.video-recommendation {
+    padding: 0 1rem;
+    display: flex;
+    box-sizing: border-box;
+    margin: 1.5rem 0;
+    
+    &__pic{
+
+        border-radius: 0.25rem;
+        width: 7.5rem;
+        height: 4.374rem;
+        object-fit: cover;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 70px;
+        padding-left: 1rem;
+        margin: 0;
+        
+    }
+
+    &__title {
+        font-size: 0.8rem;
+        height: 2rem;
+        width: 9.25rem;
+        margin: 0;
+        font-family: 'Avenir-Bold';
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: $color-sept;
+        font-weight: bold;
+
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &__channel {
+        margin: 0;
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+
+}

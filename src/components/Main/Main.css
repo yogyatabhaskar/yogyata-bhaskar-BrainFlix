@@ -1,0 +1,43 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (min-width: 48rem) {
+  .home-page__section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+@media (min-width: 48rem) {
+  .home-page__description {
+    width: 50%;
+  }
+}
+@media (min-width: 48rem) {
+  .home-page__posted {
+    width: 59vw;
+  }
+}
+
+@media (min-width: 48rem) {
+  .recommendations {
+    width: 40%;
+    border-left: 0.063rem solid #e1e1e1;
+  }
+}
+.recommendations__header {
+  padding: 0 1rem;
+}
+@media (min-width: 48rem) {
+  .recommendations__header {
+    margin: 2.125rem 0;
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 80rem) {
+  .recommendations__header {
+    margin: 2rem 0;
+  }
+}/*# sourceMappingURL=Main.css.map */

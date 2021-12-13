@@ -1,0 +1,149 @@
+@media (min-width: 48rem) {
+  .hero {
+    height: 25rem;
+  }
+}
+@media (min-width: 80rem) {
+  .hero {
+    height: 27rem;
+  }
+}
+.hero__video {
+  width: 100%;
+  height: 22rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 48rem) {
+  .hero__video {
+    height: 25rem;
+    width: 43.75rem;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__video {
+    height: 27rem;
+    width: 48.1rem;
+  }
+}
+.hero__background {
+  width: 100%;
+  background-color: black;
+  height: 22rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 48rem) {
+  .hero__background {
+    height: 25rem;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__background {
+    height: 27rem;
+  }
+}
+.hero__controls {
+  width: 90%;
+  height: 12rem;
+  position: absolute;
+  top: 10rem;
+  display: flex;
+  align-items: flex-end;
+}
+@media (min-width: 48rem) {
+  .hero__controls {
+    top: 0;
+    height: 25rem;
+    width: 43rem;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__controls {
+    height: 27rem;
+    width: 48rem;
+  }
+}
+.hero__play {
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 2rem;
+  width: 3.125rem;
+  padding: 0.45rem 0.35rem 0.45rem 0.55rem;
+  margin: 0 0.5rem 0.5rem 1rem;
+}
+@media (min-width: 48rem) {
+  .hero__play {
+    margin: 0 1rem 1rem 0.5rem;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__play {
+    margin-left: 1rem;
+  }
+}
+.hero__video-process {
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.125rem 0.125rem;
+  margin-bottom: 0.5rem;
+  flex-grow: 2;
+}
+@media (min-width: 48rem) {
+  .hero__video-process {
+    width: 32rem;
+    margin: 0 0 1rem 0;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__video-process {
+    width: 38rem;
+  }
+}
+.hero__progress-bar {
+  width: 79%;
+  height: 0;
+  margin: 0 auto;
+  border: 0.125rem solid black;
+  border-radius: 0.313rem;
+}
+@media (min-width: 48rem) {
+  .hero__progress-bar {
+    margin: auto 1rem;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__progress-bar {
+    width: 80%;
+  }
+}
+.hero__progress-time {
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  margin-right: 1rem;
+}
+.hero__settings {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 2rem;
+  width: 5rem;
+  padding: 0.35rem 0.85rem;
+  margin: 0 1rem 0.5rem 0.5rem;
+}
+@media (min-width: 48rem) {
+  .hero__settings {
+    margin: 0 0.5rem 1rem 1rem;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__settings {
+    margin-right: 1rem;
+  }
+}/*# sourceMappingURL=Hero.css.map */
