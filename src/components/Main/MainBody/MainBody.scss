@@ -1,19 +1,183 @@
+@use "../../../styles/partials/_variables.scss" as *;
+@use "../../../styles/partials/_mixins.scss" as *;
+@use "../../../styles/partials/_typography.scss";
 
-.review{
+.videoinfo {
+  padding: 1.5rem 1rem 0 1rem;
+  @include tablet {
+    padding: 2.5rem 1.5rem 0 1.5rem;
+    width: 45rem;
+    margin: 0 auto;
+  }
+  @include desktop {
+    margin: 0;
+    padding: 1.75rem 0 1rem 0;
+    width: 35.25rem;
+  }
 
-    &__thumbnail{
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius: 50%;
+  //   &__container {
+
+  //   }
+
+  &__title {
+    margin: 0;
+    border-bottom: 0.0625rem solid #e1e1e1;
+    padding-bottom: 0.5rem;
+
+    @include tablet {
+      font-size: 2.25rem;
     }
+    @include desktop {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__brief {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.0625rem solid #e1e1e1;
+    padding-bottom: 0.5rem;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__views,
+  &__likes {
+    display: flex;
+    padding-right: 5rem;
+  }
+
+  &__viewimg,
+  &__likeimg {
+    padding-right: 0.5rem;
+  }
+}
+
+.review {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border-bottom: 0.0625rem solid #e1e1e1;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__styling {
+    @include tablet {
+      display: flex;
+    }
+  }
+  &__input-label {
+    font-size: 0.75rem;
+    color: #afafaf;
+    margin-left: 4rem;
+    padding-bottom: 0.5rem;
+    @include tablet {
+      //   width: 39rem;
+      //   margin-right: 2rem;
+
+      font-size: 0.8rem;
+    }
+    @include desktop {
+      width: 29.5rem;
+      margin-right: 1.6rem;
+    }
+  }
+
+  &__text-container {
+    flex-grow: 2;
+    margin-left: 4rem;
+    width: 80vw;
+    height: 6rem;
+    font-family: "Avenir-Regular";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    border: 0.063rem solid #e1e1e1;
+    border-radius: 0.25rem;
+    background-color: #fafafa;
+    padding: 0.75rem 1rem;
+    color: #323232;
+    outline: none;
+    box-sizing: border-box;
+    resize: none;
+    &:focus {
+      border: 0.125rem solid #0095ff;
+      box-sizing: border-box;
+      padding: 0.687rem 0.937rem;
+    }
+    &::placeholder {
+      font-size: 0.85rem;
+    }
+    @include tablet {
+      height: 3rem;
+      width: 27.5rem;
+    }
+    @include desktop {
+      width: 20.5rem;
+    }
+  }
+
+  &__thumbnail {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    display: flex;
+    object-fit: cover;
+    object-position: left;
+    margin: 0.5rem 0 1rem 0;
+    position: absolute;
+    left: 0;
+    top: 4.5rem;
+    @include tablet {
+      margin-right: 1rem;
+    }
+  }
+
+  &__button {
+    margin: 1rem 0 1.5rem 4rem;
+    width: 80vw;
+    height: 3rem;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    background-color: #0095ff;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-family: "Avenir-Demi";
+    @include tablet {
+      width: 10rem;
+      margin: 0 2.5rem 1.5rem 1rem;
+      font-size: 0.95rem;
+    }
+    @include desktop {
+      margin-right: 1.6rem;
+      width: 8rem;
+      font-size: 0.8rem;
+      &:hover {
+        background-color: #1572b8;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 
-
-.postedcomments {
-    &__thumbnail{
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius: 50%;
-    }
-}

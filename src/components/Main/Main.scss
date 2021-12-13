@@ -1,6 +1,13 @@
-
+@use '../../styles/partials/_mixins.scss' as *;
 
 .home-page {
     display: flex;
     flex-direction: column;
+
+    // @include desktop {
+    
+    //       display: flex;
+    //       flex-wrap: wrap;
+    //       justify-content: center;
+    // }
 }
