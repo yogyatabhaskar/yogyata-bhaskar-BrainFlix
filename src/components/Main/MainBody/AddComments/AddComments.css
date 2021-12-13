@@ -31,6 +31,7 @@
 }
 .comment-list__commentbox {
   display: flex;
+  justify-content: space-between;
 }
 .comment-list__name {
   margin: 0;
