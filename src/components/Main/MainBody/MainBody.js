@@ -11,7 +11,7 @@ function VideoInfo({ selectedVideo }) {
 
         <div className="videoinfo__brief">
           <div className="videoinfo__detail">
-            <p className="videoinfo__channel">{selectedVideo.channel}</p>
+            <p className="videoinfo__channel">By {selectedVideo.channel}</p>
             <p className="videoinfo__date">{selectedVideo.timestamp}</p>
           </div>
 
@@ -42,7 +42,7 @@ function VideoInfo({ selectedVideo }) {
 
         <div className="review">
           <form className="review__form">
-            <h5 className="review__count">3 Comments</h5>
+            <div><h5 className="review__count">3 Comments</h5></div>
             <div>
               <img
                 className="review__thumbnail"

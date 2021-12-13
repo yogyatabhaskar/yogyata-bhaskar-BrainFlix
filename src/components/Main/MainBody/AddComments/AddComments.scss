@@ -1,25 +1,27 @@
 @use '../../../../styles/partials/_mixins.scss' as *;
+@use '../../../../styles/partials/_variables.scss' as *;
+
 
 .comment-list {
   display: flex;
   padding: 0 1rem;
   position: relative;
-
-  @include tablet {
-    margin: 0 3rem;
-    padding: 0px 3rem;
+  @include desktop {
+    padding-left: 9rem;
+    
   }
 
   &__thumbnail {
     height: 3rem;
     width: 3rem;
-    background-color: #d8d8d8;
+    background-color: $color-quinary;
     border-radius: 50%;
     margin: 0.5rem 0 1rem 0;
     position: absolute;
     top: 0.5rem;
     @include tablet {
         margin-right: 1rem;
+        padding: 0;
       }
    
   }
@@ -29,7 +31,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 4rem;
-    border-bottom: 0.063rem solid #e1e1e1;
+    border-bottom: 0.063rem solid $color-quinary;
   }
 
   &__commentbox {
@@ -40,10 +42,13 @@
   &__name {
     margin: 0;
     padding-top: 1rem;
+    color: $color-sept;
+    font-weight: bold;
    
   }
   &__date {
     margin: 0;
     padding-top: 1rem;
+    color: $color-oct;
   }
 }

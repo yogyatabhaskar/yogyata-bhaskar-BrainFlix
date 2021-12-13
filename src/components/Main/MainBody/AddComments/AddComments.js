@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import mohan from "../../../../assets/Images/Mohan-muruge.jpg";
 import "./AddComments.scss";
 
 export default class AddComments extends Component {

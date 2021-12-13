@@ -6,26 +6,24 @@
   padding: 1.5rem 1rem 0 1rem;
   @include tablet {
     padding: 2.5rem 1.5rem 0 1.5rem;
-    width: 45rem;
+    width: 62vw;
     margin: 0 auto;
   }
   @include desktop {
     margin: 0;
-    padding: 1.75rem 0 1rem 0;
-    width: 35.25rem;
+    padding: 1.75rem 0 1rem 9rem;
+    width: 60vw;
   }
 
-  //   &__container {
-
-  //   }
 
   &__title {
     margin: 0;
-    border-bottom: 0.0625rem solid #e1e1e1;
+    border-bottom: 0.0625rem solid $color-quinary;
     padding-bottom: 0.5rem;
 
     @include tablet {
       font-size: 2.25rem;
+      border-bottom: 0
     }
     @include desktop {
       font-size: 1.6rem;
@@ -35,20 +33,46 @@
   &__brief {
     display: flex;
     justify-content: space-between;
-    border-bottom: 0.0625rem solid #e1e1e1;
+    border-bottom: 0.0625rem solid $color-quinary;
     padding-bottom: 0.5rem;
+    
   }
 
   &__detail {
     display: flex;
     flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__channel {
+    padding-right: 1rem;
+    font-weight: bold;
+  }
+
+  &__social
+  {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
   }
 
   &__views,
   &__likes {
     display: flex;
     padding-right: 5rem;
+
+    @include tablet {
+      padding-right: 1rem;
+    }
+    
   }
+  &__date, &__viewnum, &__likenum {
+    color: $color-oct;
+  }
+
 
   &__viewimg,
   &__likeimg {
@@ -60,7 +84,7 @@
   position: relative;
   display: flex;
   width: 100%;
-  border-bottom: 0.0625rem solid #e1e1e1;
+  border-bottom: 0.0625rem solid $color-quinary;
 
   &__form {
     display: flex;
@@ -70,6 +94,10 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
+  }
+
+  &__count {
+    width: 70vw;
   }
 
   &__content {
@@ -88,15 +116,10 @@
   }
   &__input-label {
     font-size: 0.75rem;
-    color: #afafaf;
+    color: $color-oct;
     margin-left: 4rem;
     padding-bottom: 0.5rem;
-    @include tablet {
-      //   width: 39rem;
-      //   margin-right: 2rem;
-
-      font-size: 0.8rem;
-    }
+   
     @include desktop {
       width: 29.5rem;
       margin-right: 1.6rem;
@@ -111,16 +134,16 @@
     font-family: "Avenir-Regular";
     font-size: 0.875rem;
     line-height: 1.25rem;
-    border: 0.063rem solid #e1e1e1;
+    border: 0.063rem solid $color-quinary;
     border-radius: 0.25rem;
-    background-color: #fafafa;
+    background-color: $color-senary;
     padding: 0.75rem 1rem;
-    color: #323232;
+    color: $color-quaternary;
     outline: none;
     box-sizing: border-box;
     resize: none;
     &:focus {
-      border: 0.125rem solid #0095ff;
+      border: 0.125rem solid $color-primary;
       box-sizing: border-box;
       padding: 0.687rem 0.937rem;
     }
@@ -129,7 +152,7 @@
     }
     @include tablet {
       height: 3rem;
-      width: 27.5rem;
+      width: 34vw;
     }
     @include desktop {
       width: 20.5rem;
@@ -156,24 +179,22 @@
     margin: 1rem 0 1.5rem 4rem;
     width: 80vw;
     height: 3rem;
-    color: #ffffff;
+    color: $color-secondary;
     border: none;
     outline: none;
-    background-color: #0095ff;
+    background-color: $color-primary;
     border-radius: 0.25rem;
-    font-size: 0.875rem;
-    font-family: "Avenir-Demi";
+   ;
     @include tablet {
-      width: 10rem;
+      width: 13vw;
       margin: 0 2.5rem 1.5rem 1rem;
       font-size: 0.95rem;
     }
     @include desktop {
       margin-right: 1.6rem;
-      width: 8rem;
       font-size: 0.8rem;
       &:hover {
-        background-color: #1572b8;
+        background-color: $color-tertiary;
         cursor: pointer;
       }
     }

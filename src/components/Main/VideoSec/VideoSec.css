@@ -1,4 +1,5 @@
 .video-recommendation {
+  padding: 0 1rem;
   display: flex;
   box-sizing: border-box;
   margin: 1.5rem 0;
@@ -16,6 +17,7 @@
   justify-content: space-evenly;
   height: 70px;
   padding-left: 1rem;
+  margin: 0;
 }
 .video-recommendation__title {
   font-size: 0.8rem;
@@ -25,11 +27,19 @@
   font-family: "Avenir-Bold";
   text-overflow: ellipsis;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  color: #000000;
+  font-weight: bold;
 }
-.video-recommendation__title__channel {
+@media (min-width: 48rem) {
+  .video-recommendation__title {
+    margin: 0;
+  }
+}
+.video-recommendation__channel {
   margin: 0;
-  font-size: 0.875rem;
+}
+@media (min-width: 48rem) {
+  .video-recommendation__channel {
+    margin: 0;
+  }
 }/*# sourceMappingURL=VideoSec.css.map */

@@ -1,13 +1,45 @@
-@use '../../styles/partials/_mixins.scss' as *;
+@use "../../styles/partials/_mixins.scss" as *;
 
 .home-page {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
-    // @include desktop {
-    
-    //       display: flex;
-    //       flex-wrap: wrap;
-    //       justify-content: center;
-    // }
+  &__section {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
+
+  &__description {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__posted {
+    @include tablet {
+      width: 59vw;
+    }
+  }
+}
+
+.recommendations {
+  @include tablet {
+    width: 40%;
+    border-left: 0.063rem solid #e1e1e1;
+  }
+
+  &__header {
+    padding: 0 1rem;
+    @include tablet {
+      margin: 2.125rem 0;
+      padding: 0 1rem;
+    }
+    @include desktop {
+      margin:  2rem 0 ;
+    }
+  }
 }

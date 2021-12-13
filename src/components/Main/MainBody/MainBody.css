@@ -10,31 +10,116 @@
   font-weight: normal;
   font-style: normal;
 }
+h1 {
+  font-family: "Avenir-Bold";
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 48rem) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+h2 {
+  font-family: "Avenir-Bold";
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 48rem) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+h3 {
+  font-family: "Avenir-Bold";
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+@media (min-width: 48rem) {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+h4 {
+  font-family: "Avenir-Bold";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+@media (min-width: 48rem) {
+  h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media (min-width: 80rem) {
+  h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+a {
+  font-family: "Avenir";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 48rem) {
+  a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+}
+
+p {
+  font-family: "Avenir";
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+@media (min-width: 48rem) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}
+
 .videoinfo {
   padding: 1.5rem 1rem 0 1rem;
 }
 @media (min-width: 48rem) {
   .videoinfo {
     padding: 2.5rem 1.5rem 0 1.5rem;
-    width: 45rem;
+    width: 62vw;
     margin: 0 auto;
   }
 }
 @media (min-width: 80rem) {
   .videoinfo {
     margin: 0;
-    padding: 1.75rem 0 1rem 0;
-    width: 35.25rem;
+    padding: 1.75rem 0 1rem 9rem;
+    width: 60vw;
   }
 }
 .videoinfo__title {
   margin: 0;
-  border-bottom: 0.0625rem solid #e1e1e1;
+  border-bottom: 0.0625rem solid #E1E1E1;
   padding-bottom: 0.5rem;
 }
 @media (min-width: 48rem) {
   .videoinfo__title {
     font-size: 2.25rem;
+    border-bottom: 0;
   }
 }
 @media (min-width: 80rem) {
@@ -45,16 +130,39 @@
 .videoinfo__brief {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.0625rem solid #e1e1e1;
+  border-bottom: 0.0625rem solid #E1E1E1;
   padding-bottom: 0.5rem;
 }
 .videoinfo__detail {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 48rem) {
+  .videoinfo__detail {
+    flex-direction: row;
+  }
+}
+.videoinfo__channel {
+  padding-right: 1rem;
+  font-weight: bold;
+}
+@media (min-width: 48rem) {
+  .videoinfo__social {
+    display: flex;
+    flex-direction: row;
+  }
+}
 .videoinfo__views, .videoinfo__likes {
   display: flex;
   padding-right: 5rem;
+}
+@media (min-width: 48rem) {
+  .videoinfo__views, .videoinfo__likes {
+    padding-right: 1rem;
+  }
+}
+.videoinfo__date, .videoinfo__viewnum, .videoinfo__likenum {
+  color: #AFAFAF;
 }
 .videoinfo__viewimg, .videoinfo__likeimg {
   padding-right: 0.5rem;
@@ -64,7 +172,7 @@
   position: relative;
   display: flex;
   width: 100%;
-  border-bottom: 0.0625rem solid #e1e1e1;
+  border-bottom: 0.0625rem solid #E1E1E1;
 }
 .review__form {
   display: flex;
@@ -75,6 +183,9 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+.review__count {
+  width: 70vw;
 }
 .review__content {
   display: flex;
@@ -92,14 +203,9 @@
 }
 .review__input-label {
   font-size: 0.75rem;
-  color: #afafaf;
+  color: #AFAFAF;
   margin-left: 4rem;
   padding-bottom: 0.5rem;
-}
-@media (min-width: 48rem) {
-  .review__input-label {
-    font-size: 0.8rem;
-  }
 }
 @media (min-width: 80rem) {
   .review__input-label {
@@ -115,7 +221,7 @@
   font-family: "Avenir-Regular";
   font-size: 0.875rem;
   line-height: 1.25rem;
-  border: 0.063rem solid #e1e1e1;
+  border: 0.063rem solid #E1E1E1;
   border-radius: 0.25rem;
   background-color: #fafafa;
   padding: 0.75rem 1rem;
@@ -125,7 +231,7 @@
   resize: none;
 }
 .review__text-container:focus {
-  border: 0.125rem solid #0095ff;
+  border: 0.125rem solid #0095FF;
   box-sizing: border-box;
   padding: 0.687rem 0.937rem;
 }
@@ -141,7 +247,7 @@
 @media (min-width: 48rem) {
   .review__text-container {
     height: 3rem;
-    width: 27.5rem;
+    width: 34vw;
   }
 }
 @media (min-width: 80rem) {
@@ -175,14 +281,12 @@
   color: #ffffff;
   border: none;
   outline: none;
-  background-color: #0095ff;
+  background-color: #0095FF;
   border-radius: 0.25rem;
-  font-size: 0.875rem;
-  font-family: "Avenir-Demi";
 }
 @media (min-width: 48rem) {
   .review__button {
-    width: 10rem;
+    width: 13vw;
     margin: 0 2.5rem 1.5rem 1rem;
     font-size: 0.95rem;
   }
@@ -190,11 +294,10 @@
 @media (min-width: 80rem) {
   .review__button {
     margin-right: 1.6rem;
-    width: 8rem;
     font-size: 0.8rem;
   }
   .review__button:hover {
-    background-color: #1572b8;
+    background-color: #0065AD;
     cursor: pointer;
   }
 }/*# sourceMappingURL=MainBody.css.map */

@@ -10,21 +10,25 @@ function Header() {
       <div className="header__logoimg">
         <img className="header__logo" src={logo} alt="Brainflix-logo"/>
       </div>
-    <div className="header__info">
+
         <div className="header__search">
           <input className="header__searchbar" type="text" placeholder="  Search"></input>  
+          <img
+              className="header__avatar1"
+              src={avatar}
+              alt="person-pic"
+            />
         </div>
-        <div>
+        <div className="header__account">
         <button className="header__button">UPLOAD</button>
           <img
-              className="header__avatar"
+              className="header__avatar2"
               src={avatar}
               alt="person-pic"
             />
           
         </div>  
-        
-    </div>
+
     </header>
   );
 }
