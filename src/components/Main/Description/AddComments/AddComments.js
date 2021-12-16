@@ -1,6 +1,6 @@
 import "./AddComments.scss";
 
-export default function AddComments (addedcomment) {
+export default function Description (addedcomment) {
   
     return (
       <div className="comment-list">

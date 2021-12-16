@@ -1,8 +1,8 @@
 import "./Main.scss";
 import Hero from "./Hero/Hero";
-import MainBody from "./MainBody/MainBody";
+import Description from "./Description/Description";
 import videoDetailsData from "../../data/video-details.json";
-import AddComments from "./MainBody/AddComments/AddComments";
+import AddComments from "./Description/AddComments/AddComments";
 import videosData from "../../data/videos.json";
 import { Component } from "react";
 import VideoRecommendation from "./VideoSec/VideoSec";
@@ -31,8 +31,11 @@ class Body extends Component {
 
         <div className="home-page__section">
           <div className="home-page__description">
-            <MainBody selectedVideo={this.state.selectedVideo} />
+            
+            <Description selectedVideo={this.state.selectedVideo} />
+            
             <div className="home-page__posted">
+              
               {this.state.selectedVideo.comments.map((article) => {
                 const dateElem = new Date(article.timestamp);
                 const dateElement = dateElem.toLocaleDateString();

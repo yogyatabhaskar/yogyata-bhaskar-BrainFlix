@@ -1,10 +1,11 @@
 import mohan from "../../../assets/Images/Mohan-muruge.jpg";
 import viewicon from "../../../assets/Icons/views.svg";
 import likeicon from "../../../assets/Icons/likes.svg";
-import "./MainBody.scss";
+import "./Description.scss";
 
 function VideoInfo({ selectedVideo }) {
   const dateEl = new Date(selectedVideo.timestamp);
+  const count = selectedVideo.comments.length;
 
   return (
     <main className="videoinfo">
@@ -40,11 +41,11 @@ function VideoInfo({ selectedVideo }) {
 
         <div className="videoinfo__detail">
           <p className="videoinfo__description">{selectedVideo.description}</p>
+          
         </div>
-
         <div className="review">
           <form className="review__form">
-            <div><h5 className="review__count">3 Comments</h5></div>
+            <div><h5 className="review__count">{count} Comments</h5></div>
             <div>
               <img
                 className="review__thumbnail"
