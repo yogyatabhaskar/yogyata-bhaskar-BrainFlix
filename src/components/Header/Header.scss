@@ -9,7 +9,7 @@
   @include tablet {
     flex-direction: row;
     justify-content: flex-end;
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
   }
   @include desktop {
     padding: 1rem 9rem;
@@ -25,7 +25,7 @@
   }
 
   &__logo {
-      height: 1.7rem;
+    height: 1.7rem;
     display: flex;
     justify-content: center;
     @include tablet {
@@ -37,6 +37,7 @@
   &__search {
     display: flex;
     width: 100%;
+    justify-content: space-between;
 
     @include tablet {
       justify-content: flex-end;
@@ -44,9 +45,9 @@
   }
 
   &__searchbar {
-
+    display: flex;
+    flex-grow: 2;
     height: 3rem;
-    width: 85vw;
     border: 0.063rem solid $color-quinary;
     border-radius: 0.25rem;
     background-color: #fafafa;
@@ -61,10 +62,12 @@
     &::placeholder {
       background-image: url("../../assets/Icons/search.svg");
       background-repeat: no-repeat;
-      color: #323232;
+      color: $color-sept;
       font-size: 1rem;
+      padding-left: 2rem;
     }
     @include tablet {
+      flex-grow: 0;
       width: 15.5rem;
     }
     @include desktop {
@@ -86,8 +89,12 @@
   &__account {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    @include tablet {
+      justify-content: flex-end;
+      width: auto;
+    }
   }
-
   
   &__avatar2 {
     display: none;
@@ -108,32 +115,28 @@
     background-image: url(../../assets/Icons/upload.svg);
     background-repeat: no-repeat;
     background-position: left 0.5rem bottom 50%;
-    width: 93vw;
     height: 3rem;
-    margin: 1rem;
+    margin: 1rem 0;
     color: $color-secondary;
     border: none;
-    outline: none;
     border-radius: 0.25rem;
-    font-size: 0.875rem;
-
+    font-weight: bold;
+    flex-grow: 2;
     display: flex;
     justify-content: center;
     align-items: center;
+
     @include tablet {
-      width: 10rem;
-      margin: auto 1.5rem;
+      width: 12rem;
+      margin: auto 1.5rem auto 0;
+      flex-grow: 0;
     }
-    @include desktop {
+    
       &:hover {
         background-color: $color-tertiary;
         cursor: pointer;
       }
-    }
+  
   }
 }
 
-input::placeholder {
-  padding-left: 2rem;
-  color: $color-quaternary;
-}

@@ -4,6 +4,8 @@ import likeicon from "../../../assets/Icons/likes.svg";
 import "./MainBody.scss";
 
 function VideoInfo({ selectedVideo }) {
+  const dateEl = new Date(selectedVideo.timestamp);
+
   return (
     <main className="videoinfo">
       <div className="videoinfo__container">
@@ -12,7 +14,7 @@ function VideoInfo({ selectedVideo }) {
         <div className="videoinfo__brief">
           <div className="videoinfo__detail">
             <p className="videoinfo__channel">By {selectedVideo.channel}</p>
-            <p className="videoinfo__date">{selectedVideo.timestamp}</p>
+            <p className="videoinfo__date">{(dateEl).toLocaleDateString()}</p>
           </div>
 
           <div className="videoinfo__social">
