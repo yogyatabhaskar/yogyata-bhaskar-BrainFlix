@@ -110,6 +110,11 @@
     }
   }
 
+  &__link {
+    text-decoration: none;
+
+  }
+
   &__button {
     background-color: $color-primary;
     background-image: url(../../assets/Icons/upload.svg);

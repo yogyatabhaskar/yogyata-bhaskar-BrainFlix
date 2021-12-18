@@ -3,7 +3,7 @@ import axios from "axios";
 import Header from "../../components/Header/Header";
 import Hero from "../../components/Main/Hero/Hero";
 import Description from "../../components/Main/Description/Description";
-// import AddComments from "../../components/Main/Description/AddComments/AddComments"
+import Comments from "../../components/Main/Description/AddComments/AddComments"
 import VideoRecommendation from "../../components/Main/VideoSec/VideoSec";
 import "../../components/Main/Main.scss";
 
@@ -11,11 +11,10 @@ class HomePage extends Component {
   state = {
     videos: [],
     selectedVideo: {}, 
-    isError: false,
+    CommentData:[]
   };
 
   getSpecificVideo = (id) => {
-    if (id) {
       axios
         .get(
           "https://project-2-api.herokuapp.com/videos/" +
@@ -26,34 +25,12 @@ class HomePage extends Component {
           //   console.log(response.data);
           this.setState({
             selectedVideo: response.data,
+            CommentData: response.data.comments
           });
         })
-        .catch(() => {
-          this.setState({
-            isError: true,
-          });
-        });
-    } else {
-      axios
-        .get(
-          "https://project-2-api.herokuapp.com/videos?api_key=56330613-0c78-4cad-8d8e-76d05748270e"
-        )
-        .then((response) => {
-          // console.log(response);
-          const firstVideoId = response.data[0].id;
-          return axios.get(
-            "https://project-2-api.herokuapp.com/videos/" +
-              firstVideoId +
-              "?api_key=56330613-0c78-4cad-8d8e-76d05748270e"
-          );
-        })
-        .then((response) => {
-          console.log(response.data);
-          this.setState({
-            selectedVideo: response.data,
-          });
-        });
-    }
+        .catch (error => {
+          console.log('this is the problem')
+      })
   };
 
   componentDidMount() {
@@ -69,9 +46,9 @@ class HomePage extends Component {
         });
       });
 
-    const videoId = this.props.match.params.videoId;
-    console.log(this.props);
-    this.getSpecificVideo(videoId);
+
+      const videoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
+      this.getSpecificVideo(videoId);
   }
 
   componentDidUpdate(prevProps) {
@@ -86,7 +63,6 @@ class HomePage extends Component {
   render() {
     const filterVideo = this.state.videos;
     console.log("rendered");
-    // console.log(this.state.selectedVideo.comments)
     return (
       <div className="video-page">
         <Header />
@@ -99,9 +75,10 @@ class HomePage extends Component {
               <Description selectedVideo={this.state.selectedVideo} />
             </div>
 
-            {/* <div className="home-page__posted">
-            <AddComments selectedVideo={this.state.selectedVideo.comments}/>
-            </div> */}
+            <div className="home-page__posted">
+            <Comments CommentData={this.state.CommentData}/>
+
+            </div>
 
             <div className="recommendations">
               <VideoRecommendation videos={filterVideo} />
