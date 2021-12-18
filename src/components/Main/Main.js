@@ -26,13 +26,8 @@ class Body extends Component {
     console.log(filterVideo);
 
     return (
-      <div className="home-page">
-        <Hero selectedVideo={this.state.selectedVideo} />
-
-        <div className="home-page__section">
-          <div className="home-page__description">
-            
-            <Description selectedVideo={this.state.selectedVideo} />
+   
+        
             
             <div className="home-page__posted">
               
@@ -50,16 +45,11 @@ class Body extends Component {
                 );
               })}
             </div>
-          </div>
+      
 
-          <aside className="recommendations">
-            <VideoRecommendation
-              videos={filterVideo}
-              selectVideo={this.handleSelectVideo}
-            />
-          </aside>
-        </div>
-      </div>
+          
+        
+     
     );
   }
 }

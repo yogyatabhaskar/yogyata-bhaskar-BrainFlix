@@ -1,14 +1,27 @@
 import './App.scss';
-import Header from './components/Header/Header';
-import Body from './components/Main/Main';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import HomePage from './pages/HomePage/HomePage';
+import VideoUpload from './pages/VideoUpload/VideoUpload';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Body />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/videos" exact component={HomePage} />
+        {/* <Route path="/video/:videoId" component={HomePage} /> */}
+        <Route path="/videoupload" component={VideoUpload} />
+        <Redirect from="/" to="/videos" />
+        {/* <Route component={NotFound} /> */}
+      </Switch>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+
+// {
+//   "api_key": "56330613-0c78-4cad-8d8e-76d05748270e"
+//   }
+
+

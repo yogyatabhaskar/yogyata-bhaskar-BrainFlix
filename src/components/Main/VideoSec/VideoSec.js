@@ -1,4 +1,5 @@
 import "./VideoSec.scss";
+// import { Link } from 'react-router-dom';
 
 function VideoRecommendation({ videos, selectVideo }) {
   return (
@@ -40,3 +41,30 @@ function VideoRecommendation({ videos, selectVideo }) {
 }
 
 export default VideoRecommendation;
+
+
+// function VideoRecommendation( { videos }) {
+//   return(
+//     <div className="video-recommendation">
+//       <div>
+//         <p className="video-recommendation__header">NEXT VIDEO</p>
+//       </div>
+
+//       <nav className="video-recommendation__container">
+//         {videos.map((video) => (
+          
+//           <VideoItem />
+      
+//   );
+// }
+// </nav>
+// function VideoItem ({video}) {
+//   return(
+//     <Link to={"/video/" + video.id} 
+//     className="video-recommendation__button">
+      
+//       {plant.name}
+  
+//     </Link>
+//   )
+// }

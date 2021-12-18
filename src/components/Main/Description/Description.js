@@ -5,7 +5,7 @@ import "./Description.scss";
 
 function VideoInfo({ selectedVideo }) {
   const dateEl = new Date(selectedVideo.timestamp);
-  const count = selectedVideo.comments.length;
+  // const count = selectedVideo.datacomments.length;
 
   return (
     <main className="videoinfo">
@@ -45,7 +45,7 @@ function VideoInfo({ selectedVideo }) {
         </div>
         <div className="review">
           <form className="review__form">
-            <div><h5 className="review__count">{count} Comments</h5></div>
+            {/* <div><h5 className="review__count">{count} Comments</h5></div> */}
             <div>
               <img
                 className="review__thumbnail"
@@ -70,6 +70,7 @@ function VideoInfo({ selectedVideo }) {
             </div>
           </form>
         </div>
+
       </div>
     </main>
   );
