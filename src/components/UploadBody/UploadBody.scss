@@ -1,217 +1,211 @@
 @use "../../styles/partials/_mixins.scss" as *;
 @use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_global.scss";
+@use "../../styles/partials/_typography.scss";
 
+.upload {
+  display: flex;
+  flex-direction: column;
 
-.videoupload {
-    /* Video Upload Block */
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    @include padding-lr(5%, 5%);
+  @include tablet {
+    border-top: 1px solid $color-quinary;
+  }
+
+  &__header {
+    padding: 0 1rem;
     @include tablet {
-        @include padding-lr(3.125%, 3.125%);
+      margin: 1rem 0 0;
+      padding: 1rem 2rem;
     }
     @include desktop {
-        @include padding-lr(12.5%, 12.5%);
+        padding-bottom: 2rem;
+        margin: 1rem 9rem;
+        border-bottom: 1px solid $color-quinary;
     }
-    &__title {
-        /* Video Upload Block - Title Element */
-        @include mobile-h1;
-        @include padding-tb(3vh, 2vh);
-        @include mob-tab-int {
-            @include padding-tb(4vh, 3vh);
-        }
-        @include tablet {
-            @include tablap-h1;
-            @include padding-tb(5vh, 3.5vh);
-            }
-        @include desktop {
-            @include padding-tb(4.5vh, 2.5vh);
-        }
-    }
-    &__main {
+  }
+
+  &__border {
+    border-top: 1px solid $color-quinary;
+      @include tablet {
+          border: 0;
+        margin: 0;
+        padding: 1rem 2rem;
+      }
+
+    @include desktop{
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        @include tablet {
-            border-top: 2px solid $color-divider;
-        }
-        @include desktop {
-            flex-direction: row;
-        }
-        &-left {
-            display: flex;
-            align-content: center;
-            flex-direction: column;
-            width: 90vw;
-            @include tablet {
-                width: 93.5vw;
-            }
-            @include desktop {
-                width: 26vw;
-            }
-        }
-        &-right {
-            display: flex;
-            flex-direction: column;
-            width: 90vw;
-            @include tablet {
-                width: 93.5vw;
-            }
-            @include desktop {
-                width: 50vw;
-            }
-        }
+        margin: 0 9rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid $color-quinary;
     }
-    &__thumbnail {
-        position: relative;
-        @include flex-center;
-        height: 48vw;
-        width: 100%;
-        border-radius: 4px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin-bottom: 4vh;
-        @include tablet {
-            height: 25vw;
-            width: 50%;
-        }
-        @include desktop {
-            height: 12.5vw;
-            width: 93%;
-            margin-bottom: 0;
-        }
-        &-title {
-            @include mobile-h5-label($color-text-label-style);
-            font-weight: 500;
-            width: 100%;        
-            @include padding-tb(1vh, 1vh);
-            @include tablet {
-                @include padding-tb(4.5vh, 0);
-            }
-        }
+  }
+
+  &__hero {
+    @include tablet {
+      border-top: 1px solid $color-quinary;
     }
-    &__form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        &-label {
-            @include mobile-h5-label($color-text-label-style);
-            @include tablet {
-                padding-left: 4%;
-            }
-            &--title {
-                @extend .videoupload__form-label;
-                    width: 90%;
-                @include tablet {
-                    padding-left: 0;
-                }
-                @include desktop {
-                    padding-top: 4.5vh;
-                }
-            }
-            &--description {
-                @extend .videoupload__form-label--title;
-                @include tablet {
-                    padding-left: 0;
-                }
-                @include desktop {
-                    padding-top: 0;
-                }
-                @include desktop-14 {
-                    padding-top: .5vh;
-                }
-            }
-        }
-        &-input {
-            font-family: $font-family;
-            height: 45px;
-            width: 90vw;
-            border: 1px solid $color-text-label-style;
-            border-radius: 4px;
-            padding-left: 18px;
-            margin-bottom: 3vh;
-            outline: none;
-            background-color: $color-text-field-bg-fill;
-            &:focus {
-                border: 2px solid $color-form-input-focus;
-            }
-            @include tablet {
-                width: 93.5vw;
-            }
-            @include desktop {
-                width: 100%;
-                margin-bottom: 1vh;
-            }
-        }
-        &-textarea {
-            font-family: $font-family;
-            height: 143px;
-            width: 90vw;
-            border: 1px solid $color-text-label-style;
-            border-radius: 4px;
-            margin-bottom: 2vh;
-            padding-left: 18px;
-            padding-top: 2.25vh;
-            outline: none;
-            background-color: $color-text-field-bg-fill;
-            &:focus {
-                border: 2px solid $color-form-input-focus;
-            }
-            @include tablet {
-                width: 93.5vw;
-                margin-bottom: 4vh;
-            }
-            @include desktop {
-                height: 6.1vw;
-                width: 100%;
-                margin-bottom: 3vh;
-                padding-top: 1.5vh;
-            }
-            @include desktop-14 {
-                height: 6.75vw;
-                margin-bottom: 3vh;
-                padding-top: 1.5vh;
-            }
-        }
-    }
-    &__button-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        @include mob-tab-int {
-            flex-direction: row-reverse;
-            border-top: 2px solid $color-divider;
-            padding-top: 4vh;
-        }
-        @include desktop {
-            padding-top: 3vh;
-        }
-    }
-    &__publish-btn {
-        color: $color-text-offset;
-        background-color: $color-primary-cta;
-        height: 40px;
-        width: 100%;
+    @include desktop {
         border: none;
-        border-radius: 4px;
-        &:hover {
-            background-color: $color-primary-cta-hover;
-        }
-        @include mob-tab-int {
-            height: 48px;
-            width: 160px;
-        }
+        padding-right: 1rem;
     }
-    &__cancel-btn {
-        color: $color-primary-cta;
-        background-color: $color-background;
-        height: 40px;
-        width: 100%;
-        border: none;
-        @include mob-tab-int {
-            height: 48px;
-            width: 130px;
-        }
+  }
+  &__title {
+    padding: 0 1rem;
+    color: $color-oct;
+
+    @include tablet {
+      margin: 0;
+      padding: 1rem 1rem 0.5rem 1rem;
     }
+    @include desktop {
+        margin: 0;
+        padding: 0;
+    }
+  }
+
+  &__video {
+    padding: 0 1rem;
+
+    width: 100vw;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include tablet {
+      width: 57vw;
+    }
+    @include desktop {
+        width: 23vw;
+        padding: 0;
+    }
+  }
+}
+.upload-input {
+  @include desktop {
+    width: 70%;
+    
+  }
+
+  &__title {
+    padding-bottom: 0.5rem;
+
+    color: $color-oct;
+    margin: 1.5rem 0 0 0;
+
+   
+    @include desktop {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__border {
+    margin: 0 1rem;
+
+    @include tablet {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $color-quinary;
+    }
+    @include desktop {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        border: 0;
+    }
+
+
+  }
+
+  &__input1 {
+    width: 100%;
+    border: 1px solid $color-quinary;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0.75rem 1rem;
+    background-color: $color-senary;
+
+    &::placeholder {
+      color: $color-sept;
+      font-family: "Avenir";
+    }
+    @include desktop {
+        margin-bottom: 1rem;
+    }
+  }
+
+  &__input2 {
+    width: 100%;
+    border: 1px solid $color-quinary;
+    border-radius: 4px;
+    height: 143px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    background-color: $color-senary;
+    @include tablet {
+      margin-bottom: 0;
+      
+    }
+
+    @include desktop {
+      height: 6.5625rem;
+    }
+
+    &::placeholder {
+      color: $color-sept;
+      font-family: "Avenir";
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    @include tablet {
+      flex-direction: row-reverse;
+    }
+    @include desktop{
+        display: flex;
+        margin: 1rem 8rem;
+    }
+
+    &__publish-button {
+      background-color: $color-primary;
+      background-image: url(../../assets/Icons/publish.svg);
+      background-repeat: no-repeat;
+      background-position: left 0.5rem bottom 50%;
+      height: 3rem;
+      margin: 1rem 0;
+      color: $color-secondary;
+      border: none;
+      border-radius: 0.25rem;
+      font-weight: bold;
+      flex-grow: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include tablet {
+        flex-grow: 0;
+        width: 12rem;
+      }
+    }
+
+    &__cancel-button2 {
+      background-color: $color-secondary;
+      height: 3rem;
+      margin: 1rem 0;
+      
+      color: $color-primary;
+      border: none;
+      border-radius: 0.25rem;
+      font-weight: bold;
+      flex-grow: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include tablet {
+        flex-grow: 0;
+       padding-right: 3rem;
+        width: 12rem;
+      }
+    }
+  }
 }
