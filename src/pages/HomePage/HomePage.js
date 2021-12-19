@@ -15,6 +15,8 @@ class HomePage extends Component {
   };
 
   getSpecificVideo = (id) => {
+    if (id) {
+
       axios
         .get(
           "https://project-2-api.herokuapp.com/videos/" +
@@ -31,6 +33,25 @@ class HomePage extends Component {
         .catch (error => {
           console.log('this is the problem')
       })
+    }
+    else {
+      axios
+      .get(
+        "https://project-2-api.herokuapp.com/videos?api_key=56330613-0c78-4cad-8d8e-76d05748270e"
+      )
+        .then((response) => {
+          const firstVideoId = response.data[0].id;
+          return axios.get("http://localhost:8080/plants/" + firstVideoId + "?api_key=123"
+          );
+        })
+        .then((response) => {
+          console.log(response.data);
+          this.setState({
+            selectedPlant: response.data,
+            CommentData: response.data.comments
+          });
+        });
+    }
   };
 
   componentDidMount() {
@@ -61,8 +82,11 @@ class HomePage extends Component {
   }
 
   render() {
-    const filterVideo = this.state.videos;
+    const filterVideo = this.state.videos.filter(
+      (video) => video.id !== this.state.selectedVideo.id
+    );
     console.log("rendered");
+    console.log(filterVideo);
     return (
       <div className="video-page">
         <Header />
@@ -73,12 +97,12 @@ class HomePage extends Component {
           <div className="home-page__section">
             <div className="home-page__description">
               <Description selectedVideo={this.state.selectedVideo} />
-            </div>
-
-            <div className="home-page__posted">
+              <div className="home-page__posted">
             <Comments CommentData={this.state.CommentData}/>
-
             </div>
+            </div>
+
+            
 
             <div className="recommendations">
               <VideoRecommendation videos={filterVideo} />

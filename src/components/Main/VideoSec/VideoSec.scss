@@ -17,15 +17,18 @@
     }
 
     &__button{
+        display: flex;
+        justify-content: flex-start;
         border: none;
         background-color: white;
         padding: 0;
+        text-decoration: none;
     }
 
     &__arrange{
         display: flex;
         padding-bottom: 1rem;
-        flex-grow: 2;
+        // flex-grow: 2;
     }
 
     &__pic{
@@ -43,7 +46,7 @@
         height: 70px;
         padding-left: 1rem;
         margin: 0;
-        
+        flex-grow: 2;
         
     }
 
@@ -52,6 +55,7 @@
         color: $color-sept;
         font-weight: bold;
         text-align: left;
+
 
         @include tablet {
             margin: 0;
