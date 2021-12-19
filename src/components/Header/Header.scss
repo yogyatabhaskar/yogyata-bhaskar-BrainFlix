@@ -110,10 +110,6 @@
     }
   }
 
-  &__link {
-    text-decoration: none;
-
-  }
 
   &__button {
     background-color: $color-primary;
@@ -130,6 +126,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 
     @include tablet {
       width: 12rem;

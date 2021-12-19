@@ -11,6 +11,7 @@ function App() {
         <Route path="/videos/:videoId" component={HomePage} />
         <Route path="/videoupload" component={VideoUpload} />
         <Redirect from="/" to="/videos" />
+
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

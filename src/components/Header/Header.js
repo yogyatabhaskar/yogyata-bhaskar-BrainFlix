@@ -21,7 +21,7 @@ function Header() {
             />
         </div>
         <div className="header__account">
-          <Link to={"/videoupload"} className="header__link"><button className="header__button">UPLOAD</button></Link>
+          <Link to={"/videoupload"} className="header__button">UPLOAD</Link>
             <img
                 className="header__avatar2"
                 src={avatar}

@@ -28,9 +28,6 @@ export default function VideoUpload() {
         </section>
       </div>
       <div className="upload-input__buttons">
-        {/* <button className="upload-input__buttons__publish-button">
-          PUBLISH
-        </button> */}
         <Link to={"/videos"} className="upload-input__buttons__publish-button">PUBLISH</Link>
 
         <button className="upload-input__buttons__cancel-button2">

@@ -3,11 +3,11 @@ import viewicon from "../../../assets/Icons/views.svg";
 import likeicon from "../../../assets/Icons/likes.svg";
 import "./Description.scss";
 
-function VideoInfo({ selectedVideo }) {
+function VideoInfo({ selectedVideo, CommentData }) {
   const dateEl = new Date(selectedVideo.timestamp);
-  // const count = selectedVideo.datacomments.length;
-
+  const count = (CommentData.length);
   return (
+    
     <main className="videoinfo">
       <div className="videoinfo__container">
         <h1 className="videoinfo__title">{selectedVideo.title}</h1>
@@ -45,7 +45,7 @@ function VideoInfo({ selectedVideo }) {
         </div>
         <div className="review">
           <form className="review__form">
-            {/* <div><h5 className="review__count">{count} Comments</h5></div> */}
+            <div><h5 className="review__count">{count} Comments</h5></div>
             <div>
               <img
                 className="review__thumbnail"

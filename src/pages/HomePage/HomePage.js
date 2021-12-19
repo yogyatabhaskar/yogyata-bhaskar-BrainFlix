@@ -7,6 +7,10 @@ import Comments from "../../components/Main/Description/AddComments/AddComments"
 import VideoRecommendation from "../../components/Main/VideoSec/VideoSec";
 import "../../components/Main/Main.scss";
 
+
+const Url = "https://project-2-api.herokuapp.com/videos/";
+const API = "56330613-0c78-4cad-8d8e-76d05748270e";
+
 class HomePage extends Component {
   state = {
     videos: [],
@@ -19,9 +23,7 @@ class HomePage extends Component {
 
       axios
         .get(
-          "https://project-2-api.herokuapp.com/videos/" +
-            id +
-            "?api_key=56330613-0c78-4cad-8d8e-76d05748270e"
+          Url +  id +  `?api_key=${API}`
         )
         .then((response) => {
           //   console.log(response.data);
@@ -36,13 +38,11 @@ class HomePage extends Component {
     }
     else {
       axios
-      .get(
-        "https://project-2-api.herokuapp.com/videos?api_key=56330613-0c78-4cad-8d8e-76d05748270e"
-      )
+      .get( Url + `?api_key=${API}`)
         .then((response) => {
           const firstVideoId = response.data[0].id;
-          return axios.get("http://localhost:8080/plants/" + firstVideoId + "?api_key=123"
-          );
+          return axios
+          .get(Url +  firstVideoId +  `?api_key=${API}`);
         })
         .then((response) => {
           console.log(response.data);
@@ -56,9 +56,7 @@ class HomePage extends Component {
 
   componentDidMount() {
     axios
-      .get(
-        "https://project-2-api.herokuapp.com/videos?api_key=56330613-0c78-4cad-8d8e-76d05748270e"
-      )
+    .get( Url + `?api_key=${API}`)
       .then((response) => {
         console.log("mounted");
         console.log(response.data);
@@ -96,7 +94,7 @@ class HomePage extends Component {
 
           <div className="home-page__section">
             <div className="home-page__description">
-              <Description selectedVideo={this.state.selectedVideo} />
+              <Description selectedVideo={this.state.selectedVideo} CommentData={this.state.CommentData}/>
               <div className="home-page__posted">
             <Comments CommentData={this.state.CommentData}/>
             </div>
