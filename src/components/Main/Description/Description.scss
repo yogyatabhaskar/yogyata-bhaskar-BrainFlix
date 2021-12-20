@@ -9,7 +9,7 @@
     margin: 0;
   }
   @include desktop {
-    margin: 0;
+    margin: 0 0 0 2rem;
     padding: 2rem 0 0 9rem;
   }
 
@@ -36,6 +36,12 @@
     flex-direction: column;
     @include tablet {
       flex-direction: row;
+    }
+  }
+
+  &__description {
+    @include desktop {
+      padding-right: 1rem;
     }
   }
 
@@ -103,6 +109,7 @@
     color: $color-oct;
     margin-left: 4rem;
     padding-bottom: 0.5rem;
+    font-weight: bold;
 
     @include desktop {
       width: 29.5rem;
@@ -145,7 +152,7 @@
     margin: 0.5rem 0 1rem 0;
     position: absolute;
     left: 0;
-    // top: 4.5rem;
+    top: 4.5rem;
     @include tablet {
       margin-right: 1rem;
     }
@@ -156,10 +163,9 @@
     height: 3rem; 
     color: $color-secondary;
     border: none;
-    background-color: $color-primary;
+    font-weight: bold;
     border-radius: 0.25rem;
-    background-image: url(../../../assets/Icons/add_comment.svg);
-    background-repeat: no-repeat;
+    background:  $color-primary url(../../../assets/Icons/add_comment.svg) no-repeat;
     background-position: left 0.5rem bottom 50%;
     @include tablet {
       width: 20%;

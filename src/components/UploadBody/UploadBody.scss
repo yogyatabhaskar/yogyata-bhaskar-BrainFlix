@@ -52,6 +52,7 @@
   &__title {
     padding: 0 1rem;
     color: $color-oct;
+    font-weight: bold;
 
     @include tablet {
       margin: 0;
@@ -87,7 +88,7 @@
 
   &__title {
     padding-bottom: 0.5rem;
-
+    font-weight: bold;
     color: $color-oct;
     margin: 1.5rem 0 0 0;
 
@@ -98,7 +99,7 @@
   }
 
   &__border {
-    margin: 0 1rem;
+    margin: 1rem;
 
     @include tablet {
       padding-bottom: 1rem;
@@ -118,35 +119,48 @@
     height: 40px;
     padding: 0.75rem 1rem;
     background-color: $color-senary;
+    margin: 0.5rem 0 1rem 0;
+
+    &:active {
+      border: 0.125rem solid $color-primary;
+      box-sizing: border-box;
+      padding-left: 0.687rem;
+    }
 
     &::placeholder {
       color: $color-sept;
       font-family: "Avenir";
     }
-    @include desktop {
-      margin-bottom: 1rem;
-    }
+   
   }
 
   &__input2 {
     width: 100%;
-    border: 1px solid $color-quinary;
+    border: 0.0625rem solid $color-quinary;
     border-radius: 4px;
     height: 143px;
     padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0 1rem 0;
     background-color: $color-senary;
+    position: relative;
+
+    &:focus {
+      border: 0.125rem solid $color-primary;
+      padding-left: 0.687rem;
+    }
+
+    &::placeholder {
+      color: $color-sept;
+      font-family: "Avenir";
+      position: absolute;
+      
+    }
     @include tablet {
       margin-bottom: 0;
     }
 
     @include desktop {
       height: 6.5625rem;
-    }
-
-    &::placeholder {
-      color: $color-sept;
-      font-family: "Avenir";
     }
   }
 
@@ -189,7 +203,6 @@
       background-color: $color-secondary;
       height: 3rem;
       margin: 1rem 0;
-
       color: $color-primary;
       border: none;
       border-radius: 0.25rem;

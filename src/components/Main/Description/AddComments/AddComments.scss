@@ -1,16 +1,11 @@
-@use '../../../../styles/partials/_mixins.scss' as *;
-@use '../../../../styles/partials/_variables.scss' as *;
-
+@use "../../../../styles/partials/_mixins.scss" as *;
+@use "../../../../styles/partials/_variables.scss" as *;
 
 .comment-list {
   display: flex;
-  padding: 0 1rem;
+  padding: 0;
   position: relative;
   border-bottom: 0.063rem solid $color-quinary;
-  @include tablet {
-    padding: 0;
-  }
- 
 
   &__thumbnail {
     height: 3rem;
@@ -19,26 +14,23 @@
     border-radius: 50%;
     margin: 0.5rem 0 1rem 0;
     position: absolute;
-    // top: 0.5rem;
+    top: 0.5rem;
     @include tablet {
-        margin-right: 1rem;
-        padding: 0;
-      }
-   
+      margin-right: 1rem;
+      padding: 0;
+    }
   }
 
   &__post {
-   
     display: flex;
     flex-direction: column;
     padding-left: 4rem;
-    
   }
 
   &__commentbox {
     display: flex;
-   justify-content: space-between;
-   padding-right: 1rem;
+    justify-content: space-between;
+    padding-right: 1rem;
   }
 
   &__name {
@@ -46,7 +38,6 @@
     padding-top: 1rem;
     color: $color-sept;
     font-weight: bold;
-   
   }
   &__date {
     margin: 0;

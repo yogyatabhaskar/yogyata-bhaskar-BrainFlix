@@ -9,6 +9,8 @@
 
     &__header{
         margin-bottom:1rem;
+        color: $color-oct;
+        font-weight: bold;
     }
     &__container{
         display: flex;
@@ -64,9 +66,14 @@
 
     &__channel {
         margin: 0;
+        color: $color-sept;
         @include tablet {
             margin: 0;
         }
+        &:visited, &:hover, &:active {
+            color: $color-sept;
+          }
+    
     }
 
 

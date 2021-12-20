@@ -7,7 +7,7 @@ class VideoRecommendation extends Component {
     return (
       <div className="video-recommendation">
         <div>
-          <p className="video-recommendation__header">NEXT VIDEO</p>
+          <p className="video-recommendation__header">NEXT VIDEOS</p>
         </div>
 
         <div className="video-recommendation__container">

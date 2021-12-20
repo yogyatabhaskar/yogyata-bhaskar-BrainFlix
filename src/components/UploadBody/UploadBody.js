@@ -1,39 +1,90 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./UploadBody.scss";
 import imagepath from "../../assets/Images/Upload-video-preview.jpg";
 
-export default function VideoUpload() {
-  return (
-    <div className="upload">
-      <h1 className="upload__header">Upload Video</h1>
-      <div className="upload__border">
-        <section className="upload__hero">
-          <p className="upload__title">VIDEO THUMBNAIL</p>
-          <img className="upload__video" src={imagepath} alt="video-thumnail" />
-        </section>
-        <section className="upload-input">
-          <div className="upload-input__border">
-            <p className="upload-input__title">TITLE YOUR VIDEO</p>
-            <input
-              className="upload-input__input1"
-              placeholder="Add a title to your video"
-            ></input>
-            <p className="upload-input__title">ADD A VIDEO DESCRIPTION</p>
-            <textarea
-              className="upload-input__input2"
-              placeholder="Add a description of your video"
-            ></textarea>
-          </div>
-        </section>
-      </div>
-      <div className="upload-input__buttons">
-        <Link to={"/videos"} className="upload-input__buttons__publish-button">PUBLISH</Link>
+class VideoUpload extends Component {
+  state = {
+    title: "",
+    description: "",
+  };
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+  isFormValid = () => {
+    if (!this.state.title || !this.state.description) {
+      return false;
+    }
+    return true;
+  };
 
-        <button className="upload-input__buttons__cancel-button2">
-          CANCEL
-        </button>
-      </div>
-    </div>
-  );
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if (this.isFormValid()) {
+      this.props.history.push("/videos");
+      alert("Uploaded successfully");
+    }
+  };
+
+  render() {
+    return (
+      <form className="upload" onSubmit={this.handleSubmit}>
+        <h1 className="upload__header">Upload Video</h1>
+
+        <div className="upload__border">
+          <section className="upload__hero">
+            <p className="upload__title">VIDEO THUMBNAIL</p>
+            <img
+              className="upload__video"
+              src={imagepath}
+              alt="video-thumnail"
+            />
+          </section>
+          <section className="upload-input">
+            <div className="upload-input__border">
+              <label className="upload-input__title">
+                TITLE YOUR VIDEO
+                <input
+                  placeholder="Add a title to your video"
+                  className="upload-input__input1"
+                  onChange={this.handleChange}
+                  type="text"
+                  name="title"
+                  value={this.state.title}
+                />
+              </label>
+              <label className="upload-input__title">
+                ADD A VIDEO DESCRIPTION
+                <input
+                  placeholder="Add a description of your video"
+                  className="upload-input__input2"
+                  onChange={this.handleChange}
+                  type="text"
+                  name="description"
+                  value={this.state.description}
+                />
+              </label>
+            </div>
+          </section>
+        </div>
+        <div className="upload-input__buttons">
+          <button
+            type="submit"
+            disabled={!this.isFormValid()}
+            className="upload-input__buttons__publish-button"
+          >
+            PUBLISH
+          </button>
+          <button className="upload-input__buttons__cancel-button2">
+            CANCEL
+          </button>
+        </div>
+      </form>
+    );
+  }
 }
+
+export default withRouter(VideoUpload);

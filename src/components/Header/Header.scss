@@ -33,7 +33,6 @@
     }
   }
 
-
   &__search {
     display: flex;
     width: 100%;
@@ -50,10 +49,11 @@
     height: 3rem;
     border: 0.063rem solid $color-quinary;
     border-radius: 0.25rem;
-    background-color: #fafafa;
+    background-color: $color-senary;
     padding-left: 0.75rem;
     color: $color-quaternary;
     margin-right: 1rem;
+
     &:focus {
       border: 0.125rem solid $color-primary;
       box-sizing: border-box;
@@ -95,7 +95,7 @@
       width: auto;
     }
   }
-  
+
   &__avatar2 {
     display: none;
     @include tablet {
@@ -105,16 +105,11 @@
       display: flex;
       object-fit: cover;
       object-position: left;
-
-      margin: auto 0;
     }
   }
 
-
   &__button {
-    background-color: $color-primary;
-    background-image: url(../../assets/Icons/upload.svg);
-    background-repeat: no-repeat;
+    background: $color-primary url(../../assets/Icons/upload.svg) no-repeat;
     background-position: left 0.5rem bottom 50%;
     height: 3rem;
     margin: 1rem 0;
@@ -133,12 +128,10 @@
       margin: auto 1.5rem auto 0;
       flex-grow: 0;
     }
-    
-      &:hover {
-        background-color: $color-tertiary;
-        cursor: pointer;
-      }
-  
+
+    &:hover {
+      background-color: $color-tertiary;
+      cursor: pointer;
+    }
   }
 }
-
