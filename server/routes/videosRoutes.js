@@ -6,7 +6,7 @@ const videoController = require('../controllers/videoController');
 
 // Routes
 // GET /videos route
-router.get("/", videoController.getAll );
+router.get("/", videoController.getAll);
 
 // GET endpoint for an individual video
 router.get("/:id", videoController.getOne);
