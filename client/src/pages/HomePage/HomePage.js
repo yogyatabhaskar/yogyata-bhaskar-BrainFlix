@@ -7,8 +7,8 @@ import Comments from "../../components/Main/Description/AddComments/AddComments"
 import VideoRecommendation from "../../components/Main/VideoSec/VideoSec";
 import "./HomePage.scss";
 
-const Url = "https://project-2-api.herokuapp.com/videos/";
-const API = "56330613-0c78-4cad-8d8e-76d05748270e";
+// const Url = "https://project-2-api.herokuapp.com/videos/";
+// const API = "56330613-0c78-4cad-8d8e-76d05748270e";
 
 class HomePage extends Component {
   state = {
@@ -20,7 +20,8 @@ class HomePage extends Component {
   getSpecificVideo = (id) => {
     if (id) {
       axios
-        .get(Url + id + `?api_key=${API}`)
+        // .get(Url + id + `?api_key=${API}`)
+        .get(`http://localhost:9001/videos/` + id)
         .then((response) => {
           this.setState({
             selectedVideo: response.data,
@@ -32,10 +33,12 @@ class HomePage extends Component {
         });
     } else {
       axios
-        .get(Url + `?api_key=${API}`)
+        // .get(Url + `?api_key=${API}`)
+        .get(`http://localhost:9001/videos`)
         .then((response) => {
           const firstVideoId = response.data[0].id;
-          return axios.get(Url + firstVideoId + `?api_key=${API}`);
+          // return axios.get(Url + firstVideoId + `?api_key=${API}`);
+          return axios.get(`http://localhost:9001/videos` + firstVideoId);
         })
         .then((response) => {
           console.log(response.data);
@@ -48,7 +51,10 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-    axios.get(Url + `?api_key=${API}`).then((response) => {
+    axios
+    // .get(Url + `?api_key=${API}`)
+    .get(`http://localhost:9001/videos`)
+    .then((response) => {
       console.log("mounted");
       console.log(response.data);
       this.setState({
