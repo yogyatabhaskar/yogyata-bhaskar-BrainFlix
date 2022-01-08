@@ -3,12 +3,14 @@ import { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./UploadBody.scss";
 import imagepath from "../../assets/Images/Upload-video-preview.jpg";
+import axios from "axios";
 
 class VideoUpload extends Component {
   state = {
     title: "",
     description: "",
   };
+
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -23,6 +25,19 @@ class VideoUpload extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+
+    axios.post(`http://localhost:9001/videos`, {
+      title: event.target.title.value,
+      description: event.target.description.value,
+      image: {imagepath}
+    })
+      .then((response) => {
+          console.log(response.data);
+      })
+      .catch (error => {
+        console.log('Post did not work')
+    });
+
     if (this.isFormValid()) {
       this.props.history.push("/videos");
       alert("Uploaded successfully");

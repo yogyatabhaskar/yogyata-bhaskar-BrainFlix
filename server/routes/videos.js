@@ -3,7 +3,6 @@ const router = express.Router();
 const fs = require('fs');
 const uniqid = require('uniqid');
 
-
 // Function to read videos data
 function readVideos() {
     const videosFile = fs.readFileSync('./data/videos.json');
@@ -16,9 +15,7 @@ function writeVideos(data) {
     fs.writeFileSync('./data/videos.json', JSON.stringify(data));
 }
 
-
 // Routes
-
 // GET /videos route
 
 router.get('/', (req, res) => {
@@ -50,8 +47,20 @@ router.post("/", (req, res) => {
     const newVideo = {
         id: uniqid(),
         title: req.body.title,
-        // content: req.body.content --> to be checked
-
+        channel: "Placeholder Channel",
+        image: req.body.image,
+        description: req.body.description,
+        views: "Placeholder number",
+        likes: "Placeholder likes",
+        duration: "Placeholder duration",
+        video: "https://project-2-api.herokuapp.com/stream",
+        timestamp: "Placeholder time",
+        comments: [
+            name="NAME",
+            comment= "COMMENT",
+            likes= "0",
+            timestamp= "TIME"
+        ]
     };
 
     // Insert that note into our data...
