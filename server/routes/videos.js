@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const uniqid = require('uniqid');
+// const imagepath = require('./public/images/Upload-video-preview.jpg').default;
 
 // Function to read videos data
 function readVideos() {
@@ -44,6 +45,8 @@ router.get('/:id', (req, res) => {
 // POST endpoint to add a video
 router.post("/", (req, res) => {
     // Make a new video with a unique ID
+    console.log("hey");
+    console.log(req.body);
     const newVideo = {
         id: uniqid(),
         title: req.body.title,
@@ -63,15 +66,15 @@ router.post("/", (req, res) => {
         ]
     };
 
-    // Insert that note into our data...
-    // 1. Read the current notes array
-    // 2. Add to the notes array
-    // 3. Write the entire new notes array to the file
+    // Insert that videos into our data...
+    // 1. Read the current videos array
+    // 2. Add to the videos array
+    // 3. Write the entire new videos array to the file
     const videos = readVideos();
     videos.push(newVideo);
     fs.writeFileSync('./data/videos.json', JSON.stringify(videos));
 
-    // Respond with the note that was created
+    // Respond with the video that was created
     res.status(201).json(newVideo);
 });
 

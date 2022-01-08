@@ -29,10 +29,11 @@ class VideoUpload extends Component {
     axios.post(`http://localhost:9001/videos`, {
       title: event.target.title.value,
       description: event.target.description.value,
-      image: {imagepath}
+      image: `${imagepath}`
+      
     })
       .then((response) => {
-          console.log(response.data);
+        console.log(response.data);
       })
       .catch (error => {
         console.log('Post did not work')
