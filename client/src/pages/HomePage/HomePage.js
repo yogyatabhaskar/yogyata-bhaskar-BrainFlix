@@ -21,7 +21,7 @@ class HomePage extends Component {
     if (id) {
       axios
         // .get(Url + id + `?api_key=${API}`)
-        .get(`http://localhost:9001/videos/` + id)
+        .get(process.env.REACT_APP_API_URL+`/videos` + id)
         .then((response) => {
           this.setState({
             selectedVideo: response.data,
@@ -33,10 +33,10 @@ class HomePage extends Component {
         });
     } else {
       axios
-        .get(`http://localhost:9001/videos`)
+        .get(process.env.REACT_APP_API_URL+`/videos`)
         .then((response) => {
           const firstVideoId = response.data[0].id;
-          return axios.get(`http://localhost:9001/videos` + firstVideoId);
+          return axios.get(process.env.REACT_APP_API_URL+`/videos` + firstVideoId);
         })
         .then((response) => {
           console.log(response.data);
@@ -50,7 +50,7 @@ class HomePage extends Component {
 
   componentDidMount() {
     axios
-    .get(`http://localhost:9001/videos`)
+    .get(process.env.REACT_APP_API_URL+`/videos`)
     .then((response) => {
       console.log("mounted");
       console.log(response.data);
@@ -75,7 +75,7 @@ class HomePage extends Component {
 addComment = ((event) =>{
   event.preventDefault();
   axios
-  .post(`http://localhost:9001/videos/:videoId/comments`, {
+  .post(process.env.REACT_APP_API_URL+`/videos/:videoId/comments`, {
     name: event.target.name.value,
     comment: event.target.comment.value
   })
