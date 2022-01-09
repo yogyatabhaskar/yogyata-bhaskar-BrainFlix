@@ -3,7 +3,7 @@ import viewicon from "../../../assets/Icons/views.svg";
 import likeicon from "../../../assets/Icons/likes.svg";
 import "./Description.scss";
 
-function VideoInfo({ selectedVideo, CommentData, addComment }) {
+function VideoInfo({ selectedVideo, CommentData}) {
   const dateEl = new Date(selectedVideo.timestamp);
   const count = (CommentData.length);
   return ( 
@@ -56,7 +56,7 @@ function VideoInfo({ selectedVideo, CommentData, addComment }) {
               <label htmlFor="comment" className="review__input-label">
                 JOIN THE CONVERSATION
               </label>
-              <form className="review__styling" onSubmit={addComment.onSubmit}>
+              <div className="review__styling">
                 <textarea
                   className="review__text-container"
                   name="comment"
@@ -65,7 +65,7 @@ function VideoInfo({ selectedVideo, CommentData, addComment }) {
                 <button type="submit" className="review__button">
                   COMMENT
                 </button>
-              </form>
+              </div>
             </div>
           </form>
         </div>

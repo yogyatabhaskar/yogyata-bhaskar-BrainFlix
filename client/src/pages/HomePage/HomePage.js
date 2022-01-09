@@ -21,7 +21,7 @@ class HomePage extends Component {
     if (id) {
       axios
         // .get(Url + id + `?api_key=${API}`)
-        .get(process.env.REACT_APP_API_URL+`/videos` + id)
+        .get(process.env.REACT_APP_API_URL+`/videos/` + id)
         .then((response) => {
           this.setState({
             selectedVideo: response.data,
@@ -36,10 +36,10 @@ class HomePage extends Component {
         .get(process.env.REACT_APP_API_URL+`/videos`)
         .then((response) => {
           const firstVideoId = response.data[0].id;
-          return axios.get(process.env.REACT_APP_API_URL+`/videos` + firstVideoId);
+          return axios.get(process.env.REACT_APP_API_URL+`/videos/` + firstVideoId);
         })
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           this.setState({
             selectedPlant: response.data,
             CommentData: response.data.comments,
@@ -52,8 +52,8 @@ class HomePage extends Component {
     axios
     .get(process.env.REACT_APP_API_URL+`/videos`)
     .then((response) => {
-      console.log("mounted");
-      console.log(response.data);
+      // console.log("mounted");
+      // console.log(response.data);
       this.setState({
         videos: response.data,
       });
@@ -70,27 +70,14 @@ class HomePage extends Component {
     if (videoId !== prevProps.match.params.videoId) {
       this.getSpecificVideo(videoId);
     }
-  }
-
-addComment = ((event) =>{
-  event.preventDefault();
-  axios
-  .post(process.env.REACT_APP_API_URL+`/videos/:videoId/comments`, {
-    name: event.target.name.value,
-    comment: event.target.comment.value
-  })
-  .then(res=> {
-    console.log(res.data)
-  });
-
-})  
+  } 
 
   render() {
     const filterVideo = this.state.videos.filter(
       (video) => video.id !== this.state.selectedVideo.id
     );
-    console.log("rendered");
-    console.log(filterVideo);
+    // console.log("rendered");
+    // console.log(filterVideo);
     return (
       <div className="video-page">
         <Header />
@@ -105,7 +92,7 @@ addComment = ((event) =>{
                 CommentData={this.state.CommentData}
               />
               <div className="home-page__posted">
-                <Comments CommentData={this.state.CommentData} addComment={this.addComment} />
+                <Comments CommentData={this.state.CommentData} />
               </div>
             </div>
 
