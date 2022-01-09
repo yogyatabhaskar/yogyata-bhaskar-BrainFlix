@@ -33,11 +33,9 @@ class HomePage extends Component {
         });
     } else {
       axios
-        // .get(Url + `?api_key=${API}`)
         .get(`http://localhost:9001/videos`)
         .then((response) => {
           const firstVideoId = response.data[0].id;
-          // return axios.get(Url + firstVideoId + `?api_key=${API}`);
           return axios.get(`http://localhost:9001/videos` + firstVideoId);
         })
         .then((response) => {
@@ -52,7 +50,6 @@ class HomePage extends Component {
 
   componentDidMount() {
     axios
-    // .get(Url + `?api_key=${API}`)
     .get(`http://localhost:9001/videos`)
     .then((response) => {
       console.log("mounted");
@@ -75,6 +72,19 @@ class HomePage extends Component {
     }
   }
 
+addComment = ((event) =>{
+  event.preventDefault();
+  axios
+  .post(`http://localhost:9001/videos/:videoId/comments`, {
+    name: event.target.name.value,
+    comment: event.target.comment.value
+  })
+  .then(res=> {
+    console.log(res.data)
+  });
+
+})  
+
   render() {
     const filterVideo = this.state.videos.filter(
       (video) => video.id !== this.state.selectedVideo.id
@@ -95,7 +105,7 @@ class HomePage extends Component {
                 CommentData={this.state.CommentData}
               />
               <div className="home-page__posted">
-                <Comments CommentData={this.state.CommentData} />
+                <Comments CommentData={this.state.CommentData} addComment={this.addComment} />
               </div>
             </div>
 

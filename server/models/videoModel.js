@@ -2,19 +2,16 @@ const fs = require("fs");
 const uniqid = require("uniqid");
 const filePath = "./data/videos.json";
 
-// Function to read videos data
 function readVideos() {
   const videosFile = fs.readFileSync(filePath);
   const videosData = JSON.parse(videosFile);
   return videosData;
 }
 
-// Function to write videos data
 function writeVideos(data) {
   fs.writeFileSync(filePath, JSON.stringify(data));
 }
 
-//Model functions
 const getAll = () => {
   return readVideos();
 };
